@@ -24,6 +24,8 @@ class TestPlipeline(object):
     def __init__(self):
         self.file = codecs.open('D:\\PycharmProjects\\data.json', mode='wb', encoding='utf-8')  # 数据存储到data.json
 
+    #dumps是将dict转化成str格式，loads是将str转化成dict格式。
+    #dump和load也是类似的功能，只是与文件操作结合起来了。
     def process_item(self, item, spider):
         line = json.dumps(dict(item)) + "\n"
         self.file.write(line.decode("unicode_escape"))
